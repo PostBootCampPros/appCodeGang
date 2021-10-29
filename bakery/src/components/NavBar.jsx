@@ -21,7 +21,6 @@ const NavBar = () => {
     <Nav>
       <div className="logo"></div>
       <Burger />
-      <RightNav />
     </Nav>
   );
 };

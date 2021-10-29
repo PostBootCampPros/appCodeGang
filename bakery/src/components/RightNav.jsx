@@ -5,32 +5,31 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  padding: ;
 
   li {
     padding: 18px 10px;
   }
   @media (max-width: 768px) {
-    display: none;
     flex-flow: column nowrap;
     background-color: #696969;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+    top: 50px;
+    left: -22vw;
     height: 100vw;
     width: 100px;
     padding-top: 3.5rem;
     align-items: center;
-    padding-top: 3.5rem;
+    translation: transform 0.3s ease-in-out;
     li {
       color: white;
     }
   }
 `;
 
-const RightNav = (props) => {
+const RightNav = ({ open }) => {
   return (
-    <Ul>
+    <Ul open={open}>
       <li>home</li>
       <li>about us</li>
       <li>work with us</li>
